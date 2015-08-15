@@ -16,6 +16,7 @@
     "jade": "1.11.0",
     "lodash": "3.10.1",
     "normalize.css": "3.0.3",
+    "pm2-deploy": "^0.1.2",
     "react": "0.14.0-beta3",
     "react-dom": "0.14.0-beta3",
     "react-routing": "0.0.4",
@@ -69,6 +70,7 @@
     "bundle": "babel-node --eval \"require('./tools/bundle')().catch(err => console.log(err.stack))\"",
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "serve": "babel-node --eval \"require('./tools/serve')().catch(err => console.log(err.stack))\"",
-    "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\""
+    "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
+    "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
   }
 }
