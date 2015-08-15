@@ -60,11 +60,24 @@ export default async () => {
   // Build
   await require('./build')();
 
-  // Push built directory to remote repository
-  await new Promise((resolve, reject) => {
-    console.log(`push built files to ${deployConf.repo}`);
-    push('./build', deployConf.repo, err => err ? reject(err) : resolve());
-  });
+  try {
+
+    // Push built directory to remote repository
+    await new Promise((resolve, reject) => {
+      console.log(`push built files to ${deployConf.repo}`);
+      push('./build', deployConf.repo, err => {
+        console.log('push!');
+        console.log(err);
+        err ? reject(err) : resolve();
+      });
+    });
+  } catch (err) {
+
+    // TODO: Currently error occurs when built file directory is synchronized to remote repo
+    if (err !== 'Failed to push the contents.') {
+      throw err;
+    }
+  }
 
   // Ensure app directory on server is set up
   console.log('Ensure all remote servers are set up...');
