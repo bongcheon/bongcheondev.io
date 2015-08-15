@@ -77,11 +77,7 @@ export default async () => {
     // Push built directory to remote repository
     await new Promise((resolve, reject) => {
       console.log(`push built files to ${deployConf.repo}`);
-      push('./build', deployConf.repo, err => {
-        console.log('push!');
-        console.log(err);
-        err ? reject(err) : resolve();
-      });
+      push('./build', deployConf.repo, err => err ? reject(err) : resolve());
     });
   } catch (err) {
 
