@@ -3,6 +3,7 @@ import path from 'path';
 import deploy from 'pm2-deploy';
 import { execSync } from 'child_process';
 import copy from './lib/copy';
+import fs from 'fs';
 
 /**
  * Push built directory to remote repository and launch app on remote server
@@ -33,7 +34,7 @@ export default async () => {
     ref: 'origin/master',
     repo: getEnv('DEPLOY_REMOTE'),
     path: getEnv('DEPLOY_APP_DIR', `~/apps/${appName}`),
-    'post-deploy' : `npm install --production && pm2 startOrRestart server.js --name ${appName}`
+    'post-deploy' : 'npm install --production && pm2 startOrRestart processes.json'
   };
 
   // Check if local git repo is synchronized
@@ -61,6 +62,15 @@ export default async () => {
   // Build
   await require('./build')();
   await copy('package.json', 'build/package.json');
+  fs.writeFileSync('./build/processes.json', JSON.stringify({
+    apps: [{
+      name: appName,
+      script: 'server.js',
+      env: {
+        NODE_ENV: 'production'
+      }
+    }]
+  }, null, '  '));
 
   try {
 
