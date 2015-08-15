@@ -26,8 +26,6 @@ class Footer {
       <div className="Footer">
         <div className="Footer-container">
           <span className="Footer-text">© Bongcheon Dev</span>
-          <span className="Footer-spacer">·</span>
-          <span ref="viewport" className="Footer-viewport Footer-text Footer-text--muted">Viewport:</span>
         </div>
       </div>
     );
