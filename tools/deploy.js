@@ -33,7 +33,7 @@ export default async () => {
     ref: 'origin/master',
     repo: getEnv('DEPLOY_REMOTE'),
     path: getEnv('DEPLOY_APP_DIR', `~/apps/${appName}`),
-    'post-deploy' : `npm install --production && pm2 startOrRestart app.js --name ${appName}`
+    'post-deploy' : `npm install --production && pm2 startOrRestart server.js --name ${appName}`
   };
 
   // Check if local git repo is synchronized
