@@ -28,7 +28,7 @@ export default async () => {
   browserSync({
     proxy: {
 
-      target: 'localhost:5000',
+      target: 'localhost:6000',
 
       middleware: [
         webpackDevMiddleware(bundler, {

@@ -10,7 +10,7 @@ import router from './router';
 
 const server = global.server = express();
 
-server.set('port', (process.env.PORT || 5000));
+server.set('port', (process.env.PORT || 6000));
 server.use(express.static(path.join(__dirname, 'public')));
 
 //
