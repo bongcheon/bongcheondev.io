@@ -30,16 +30,6 @@ a {
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-  background: #ffffff;
-  text-shadow: none;
-}
-
-::selection {
-  background: #ffffff;
-  text-shadow: none;
-}
-
 /*
  * A better looking default horizontal rule
  */
