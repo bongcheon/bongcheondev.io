@@ -2,6 +2,7 @@ import push from 'git-push';
 import path from 'path';
 import deploy from 'pm2-deploy';
 import { execSync } from 'child_process';
+import copy from './lib/copy';
 
 /**
  * Push built directory to remote repository and launch app on remote server
@@ -59,6 +60,7 @@ export default async () => {
 
   // Build
   await require('./build')();
+  await copy('package.json', 'build/package.json');
 
   try {
 
