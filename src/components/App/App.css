@@ -14,6 +14,12 @@ html {
   font-size: 1em; /* ~16px; */
   font-family: var(--font-family-base);
   line-height: 1.375; /* ~22px */
+  color: #5f7a87;
+  background: #ffffff;
+}
+
+a {
+  color: #6dbcdb;
 }
 
 /*
@@ -25,12 +31,12 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #ffffff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: #ffffff;
   text-shadow: none;
 }
 

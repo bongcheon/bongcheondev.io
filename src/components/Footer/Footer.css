@@ -3,7 +3,7 @@
 @import '../variables.css';
 
 .Footer {
-  background: #333;
+  background: #ffffff;
   color: #fff;
 }
 
@@ -15,15 +15,15 @@
 }
 
 .Footer-text {
-  color: rgba(255, 255, 255, .5);
+  color: rgba(55, 55, 55, .5);
 }
 
 .Footer-text--muted {
-  color: rgba(255, 255, 255, .3);
+  color: rgba(55, 55, 55, .3);
 }
 
 .Footer-spacer {
-  color: rgba(255, 255, 255, .3);
+  color: rgba(55, 55, 55, .3);
 }
 
 .Footer-text,
@@ -35,10 +35,10 @@
 .Footer-link,
 .Footer-link:active,
 .Footer-link:visited {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(55, 55, 55, .6);
   text-decoration: none;
 }
 
 .Footer-link:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(55, 55, 55, 1);
 }

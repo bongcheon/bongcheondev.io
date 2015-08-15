@@ -3,11 +3,10 @@
 @import '../variables.css';
 
 :root {
-  --brand-color: #61dafb;
+  --brand-color: #fc4349;
 }
 
 .Header {
-  background: #373277;
   color: #fff;
 }
 
@@ -18,7 +17,8 @@
 }
 
 .Header-brand {
-  color: color(var(--brand-color) lightness(+10%));
+  color: color(var(--brand-color));
+  font-weight: bold;
   text-decoration: none;
   font-size: 1.75em; /* ~28px */
 }
